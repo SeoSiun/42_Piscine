@@ -6,42 +6,38 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:33:34 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/03 18:05:13 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/03 21:15:06 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	int_to_str(char* str_nbr, int nb)
+void	int_to_str(int nb, int is_negative)
 {
-	int i;
+	char	to_print;
 
-	i=14;
-	while (nb != 0)
+	if (nb == 0)
 	{
-		str_nbr[i] = nb % 10;
-		i--;
-		nb = nb / 10;
+		if (is_negative)
+			write(1, "-", 1);
+		return ;
 	}
-	return i;
+	int_to_str(nb / 10, is_negative);
+	to_print = (nb % 10) + '0';
+	write(1, &to_print, 1);
 }
 
 void	ft_putnbr(int nb)
 {
-	int	is_negative;
-	int i;
-	char	str_nbr[15];
-
-	is_negative = 0;
-	if (nb < 0)
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else if (nb == 0)
+		write(1, "0", 1);
+	else
 	{
-		is_negative = 1;
-		nb = -nb;
+		if (nb < 0)
+			int_to_str(-nb, 1);
+		else
+			int_to_str(nb, 0);
 	}
-	i = int_to_str(str_nbr, nb);
-	if (is_negative)
-	{
-		str_nbr[i] = '-';
-	}
-	write(1, str_nbr, 15);
 }
