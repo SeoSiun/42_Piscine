@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:07:06 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/03 17:32:25 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/05 19:43:31 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	write_output(int f, int s)
 {
 	char	output[7];
+	int		len;
 
 	output[0] = f / 10 + '0';
 	output[1] = f % 10 + '0';
@@ -23,15 +24,15 @@ void	write_output(int f, int s)
 	output[4] = s % 10 + '0';
 	if (f == 98 && s == 99)
 	{
-		output[5] = '\0';
-		output[6] = '\0';
+		len = 5;
 	}
 	else
 	{
 		output[5] = ',';
 		output[6] = ' ';
+		len = 7;
 	}
-	write(1, output, 7);
+	write(1, output, len);
 }
 
 void	ft_print_comb2(void)

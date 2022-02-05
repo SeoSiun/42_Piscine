@@ -6,13 +6,13 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:33:34 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/03 21:15:06 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/05 19:49:03 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	int_to_str(int nb, int is_negative)
+void	print_int(int nb, int is_negative)
 {
 	char	to_print;
 
@@ -22,7 +22,7 @@ void	int_to_str(int nb, int is_negative)
 			write(1, "-", 1);
 		return ;
 	}
-	int_to_str(nb / 10, is_negative);
+	print_int(nb / 10, is_negative);
 	to_print = (nb % 10) + '0';
 	write(1, &to_print, 1);
 }
@@ -36,8 +36,8 @@ void	ft_putnbr(int nb)
 	else
 	{
 		if (nb < 0)
-			int_to_str(-nb, 1);
+			print_int(-nb, 1);
 		else
-			int_to_str(nb, 0);
+			print_int(nb, 0);
 	}
 }
