@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 14:06:20 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/06 14:06:22 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/06 14:46:02 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ void	ft_sort_int_tab(int *tab, int size)
 	int	j;
 	int	tmp;
 
-	i = 0;
-	while (i < size - 1)
+	i = 1;
+	while (i < size)
 	{
-		j = i + 1;
-		while (j < size)
+		j = i;
+		tmp = tab[i];
+		while (j > 0)
 		{
-			if (tab[i] > tab[j])
-			{
-				tmp = tab[i];
-				tab[i] = tab[j];
-				tab[j] = tmp;
-			}
-			j++;
+			if (tab[j - 1] > tmp)
+				tab[j] = tab[j - 1];
+			else
+				break ;
+			j--;
 		}
+		tab[j] = tmp;
 		i++;
 	}
 }

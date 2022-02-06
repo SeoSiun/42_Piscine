@@ -6,7 +6,7 @@
 #include "./ex05/ft_putstr.c"
 #include "./ex06/ft_strlen.c"
 #include "./ex07/ft_rev_int_tab.c"
-//#include "./ex08/ft_sort_int_tab.c"
+#include "./ex08/ft_sort_int_tab.c"
 #include <stdio.h>
 
 int main(){
@@ -82,8 +82,7 @@ int main(){
 		printf("%d ",intarr2[i]);
 	}
 	
-	/*
-	printf("ex08\n");
+	printf("\n\nex08\n");
 	for(int i=0;i<14;i++){
 		printf("%d ",intarr1[i]);
 	}
@@ -100,9 +99,7 @@ int main(){
 	printf("\n");
 	for(int i=0;i<9;i++){
 		printf("%d ",intarr2[i]);
-	}*/
-	
-
+	}
 
 	return 0;
 }
