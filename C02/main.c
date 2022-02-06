@@ -2,7 +2,7 @@
 #include "./ex01/ft_strncpy.c"
 #include "./ex02/ft_str_is_alpha.c"
 #include "./ex03/ft_str_is_numeric.c"
-#include "./ex04/ft_str_is_lowercase.c"
+/*#include "./ex04/ft_str_is_lowercase.c"
 #include "./ex05/ft_str_is_uppercase.c"
 #include "./ex06/ft_str_is_printable.c"
 #include "./ex07/ft_strupcase.c"
@@ -11,6 +11,7 @@
 #include "./ex10/ft_strlcpy.c"
 #include "./ex11/ft_putstr_non_printable.c"
 #include "./ex12/ft_print_memory.c"
+*/
 #include <stdio.h>
 #include <string.h>
 
@@ -74,7 +75,7 @@ int main(){
 		printf("1, 0, 1, 0 : %d, %d, %d, %d\n", ft_str_is_numeric(str1), ft_str_is_numeric(str2), ft_str_is_numeric(str3), ft_str_is_numeric(str4));
 	}
 	printf("\n");
-
+/*
 	{
 		char str1[50] = "asdbabkjo";
 		char str2[50] = "kAA";
@@ -192,5 +193,6 @@ int main(){
 		ft_print_memory(str,55);
 		ft_print_memory(str,0);
 		ft_print_memory(str+9,13);
-	}		
+	}	
+*/	
 }

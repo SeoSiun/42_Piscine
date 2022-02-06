@@ -6,13 +6,13 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 17:07:55 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/06 17:29:59 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/06 20:55:25 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)
@@ -20,4 +20,5 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
+	return (dest);
 }

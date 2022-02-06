@@ -1,15 +1,18 @@
 int	ft_str_is_numeric(char *str)
 {
 	int	is_numeric;
+	int i;
 
+	i = 0;
 	is_numeric = 1;
-	while (str != '\0')
+	while (str[i] != '\0')
 	{
-		if (str < '0' || str > '9')
+		if (str[i] < '0' || str[i] > '9')
 		{
 			is_numeric = 0;
 			break ;
 		}
-		str++;
+		i++;
 	}
+	return (is_numeric);
 }
