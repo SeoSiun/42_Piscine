@@ -6,11 +6,11 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 10:50:54 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 10:51:23 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/07 15:48:20 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+char	*ft_strlowcase(char *str)
 {
 	int	offset;
 	int	i;
