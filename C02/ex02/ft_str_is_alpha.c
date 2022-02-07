@@ -12,6 +12,7 @@ int	ft_str_is_alpha(char *str)
 			is_alpha = 0;
 			break ;
 		}
+		i++;
 	}
 	return (is_alpha);
 }

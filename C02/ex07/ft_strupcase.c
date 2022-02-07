@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 10:20:43 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 10:52:15 by siseo            ###   ########.fr       */
+/*   Created: 2022/02/07 10:49:55 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/07 10:49:57 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strupcase(char *str)
 {
-	int	is_numeric;
+	int	offset;
 	int	i;
 
 	i = 0;
-	is_numeric = 1;
+	offset = 'a' - 'A';
 	while (str[i] != '\0')
 	{
-		if (str[i] < '0' || str[i] > '9')
-		{
-			is_numeric = 0;
-			break ;
-		}
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - offset;
 		i++;
 	}
-	return (is_numeric);
-}
+	return (str);
+}	
