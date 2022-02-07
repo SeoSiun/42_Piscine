@@ -6,8 +6,8 @@ int	main()
 {
 	char src[] = "beautiful";
 	char src1[] = "beautiful";
-	char dest[] = "Wo";
-	char dest1[] = "Wo";
+	char dest[100] = "Wo";
+	char dest1[100] = "Wo";
 	printf("%s", ft_strcpy(dest, src));
 	printf("\n%s", strcpy(dest1, src1));
 }

@@ -6,7 +6,7 @@ int	main()
 {
 	char src[] = "Hello";
 	char dest[] = "World1";
-	char dest1[] = "World2";
+	char dest1[] = "World1";
 
 	printf("%s", ft_strncpy(dest, src, 3));
 	printf("\n%s", strncpy(dest1, src, 3));
