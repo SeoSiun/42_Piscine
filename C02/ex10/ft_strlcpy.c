@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/07 10:44:11 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 13:52:23 by siseo            ###   ########.fr       */
+/*   Created: 2022/02/07 13:13:43 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/07 13:29:08 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	is_printable;
-	int	i;
+	unsigned int	i;
+	unsigned int	src_len;
 
-	is_printable = 1;
 	i = 0;
-	while (str[i] != '\0')
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
+	while (i < size - 1 && i < src_len)
 	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			is_printable = 0;
-			break ;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (is_printable);
+	if (size > 0)
+		dest[i] = '\0';
+	return (src_len);
 }
