@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "strlowcase.c"
+#include "ft_strlowcase.c"
 
 int	main()
 {

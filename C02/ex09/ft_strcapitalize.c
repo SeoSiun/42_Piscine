@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 11:07:09 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 11:40:48 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/07 19:16:49 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strcapitalize(char *str)
 {
 	int	is_first;
 	int	i;
-	int offset;
+	int	offset;
 
 	is_first = 1;
 	i = 0;
@@ -40,7 +40,7 @@ char	*ft_strcapitalize(char *str)
 		}
 		else if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] = str[i] + offset;
-		if((str[i] < '0' || str[i] > '9') && !ft_is_alpha(str[i]))
+		if ((str[i] < '0' || str[i] > '9') && !ft_is_alpha(str[i]))
 			is_first = 1;
 		i++;
 	}
