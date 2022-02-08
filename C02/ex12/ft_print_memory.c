@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:44:47 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 20:30:06 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/08 15:48:17 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ void	print_hex_addr(unsigned int addr)
 void	print_content_as_hex(char *addr, char *final)
 {
 	char			*hex_list;
-	unsigned int	i;
+	int				i;
 	int				is_end;
+	unsigned int	tmp;
 
 	hex_list = "0123456789abcdef";
 	i = 0;
@@ -44,8 +45,9 @@ void	print_content_as_hex(char *addr, char *final)
 			write(1, "  ", 2);
 		else
 		{
-			write(1, &hex_list[addr[i] / 16], 1);
-			write(1, &hex_list[addr[i] % 16], 1);
+			tmp = (unsigned int)addr[i];
+			write(1, &hex_list[tmp / 16], 1);
+			write(1, &hex_list[tmp % 16], 1);
 			if (addr + i + 1 == final)
 				is_end = 1;
 		}
