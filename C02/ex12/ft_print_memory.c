@@ -6,13 +6,13 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:44:47 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/08 15:48:17 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/08 17:24:05 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	print_hex_addr(unsigned int addr)
+void	print_hex_addr(unsigned long addr)
 {
 	char	hex_addr[16];
 	int		i;
@@ -34,7 +34,7 @@ void	print_content_as_hex(char *addr, char *final)
 	char			*hex_list;
 	int				i;
 	int				is_end;
-	unsigned int	tmp;
+	unsigned char	tmp;
 
 	hex_list = "0123456789abcdef";
 	i = 0;
@@ -45,7 +45,7 @@ void	print_content_as_hex(char *addr, char *final)
 			write(1, "  ", 2);
 		else
 		{
-			tmp = (unsigned int)addr[i];
+			tmp = (unsigned char)addr[i];
 			write(1, &hex_list[tmp / 16], 1);
 			write(1, &hex_list[tmp % 16], 1);
 			if (addr + i + 1 == final)
@@ -79,7 +79,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	addr_to_print = (char *)addr;
 	while ((void *)addr_to_print < addr + size)
 	{
-		print_hex_addr((unsigned int)addr_to_print);
+		print_hex_addr((unsigned long)addr_to_print);
 		write(1, ": ", 2);
 		print_content_as_hex(addr_to_print, addr + size);
 		print_content(addr_to_print, addr + size);
