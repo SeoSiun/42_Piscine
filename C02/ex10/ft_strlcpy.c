@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 13:13:43 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/07 13:29:08 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/08 13:06:00 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	src_len = 0;
 	while (src[src_len] != '\0')
 		src_len++;
-	while (i < size - 1 && i < src_len)
+	while (i < size - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
