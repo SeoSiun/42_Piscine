@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 10:53:21 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:12 by siseo            ###   ########.fr       */
+/*   Created: 2022/02/09 15:07:43 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/09 15:07:45 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_strlen(char *str)
+{
+	int	cnt;
+
+	cnt = 0;
+	while (str[cnt] != '\0')
+		cnt++;
+	return (cnt);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	dest_len;
 	unsigned int	i;
 
-	dest_len = 0;
+	dest_len = ft_strlen(dest);
 	i = 0;
-	while (dest[dest_len] != '\0')
-		dest_len++;
-	while (src[i] != '\0' && i < nb)
+	if (size != 0 && dest_len < size)
 	{
-		dest[dest_len + i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < size - dest_len - 1)
+		{
+			dest[dest_len + i] = src[i];
+			i++;
+		}
+		dest[dest_len + i] = '\0';
+		return (dest_len + ft_strlen(src));
 	}
-	dest[dest_len + i] = '\0';
-	return (dest);
+	return (ft_strlen(src) + size);
 }

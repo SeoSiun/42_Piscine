@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 10:02:48 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/09 10:06:14 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/09 15:11:35 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	i = 0;
 	while (s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i] && i < n)
 		i++;
+	if (i == n)
+		return (0);
 	return (s1[i] - s2[i]);
 }
