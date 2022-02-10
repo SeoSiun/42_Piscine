@@ -9,8 +9,8 @@ int main(void)
     char text4[] = "";
     char text5[] = "Hello 42 SEOUL!!";
     char text6[] = "Hello 42";
-    char text7[] = "aaaaaaa";
-    char text8[] = "";
+    char text7[] = "aaa";
+    char text8[] = "aab";
     char text9[] = "";
     char text10[] = "aaaaaaa";
 

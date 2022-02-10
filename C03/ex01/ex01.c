@@ -18,6 +18,6 @@ int main(void)
 	printf("Your: %d\t\t\tCStdLib: %d\n", ft_strncmp(text3, text4, 7), strncmp(text3, text4, 7));
 	printf("Your: %d\t\tCStdLib: %d\n", ft_strncmp(text5, text6, 20), strncmp(text5, text6, 20));
 	printf("Your: %d\t\tCStdLib: %d\n", ft_strncmp(text7, text8, 13), strncmp(text7, text8, 13));
-	printf("Your: %d\t\t\tCStdLib: %d\n", ft_strncmp(text9, text10, 2), strncmp(text9, text10, 2));
+	printf("Your: %d\t\t\tCStdLib: %d\n", ft_strncmp(text9, text10, 3), strncmp(text9, text10, 3));
     return 0;
 }

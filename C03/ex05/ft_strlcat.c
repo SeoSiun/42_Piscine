@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:07:43 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/09 15:07:45 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/10 10:48:35 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[dest_len + i] = '\0';
 		return (dest_len + ft_strlen(src));
 	}
-	return (ft_strlen(src) + size);
+	return (size + ft_strlen(src));
 }

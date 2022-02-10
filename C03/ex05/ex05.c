@@ -17,9 +17,9 @@ void do_test(char* text, char* append, unsigned int sz)
 
     prepare_test(buffer);
     nb = ft_strlcat(buffer, text, sz);
-	printf("Your: %s(%d)\n", buffer, nb);
+	printf("Your   : %s(%d)\n", buffer, nb);
 	nb = ft_strlcat(buffer, append, sz);
-	printf("Your: %s(%d)\n", buffer, nb);
+	printf("Your   : %s(%d)\n", buffer, nb);
 
     prepare_test(buffer);
     nb = strlcat(buffer, text, sz);
