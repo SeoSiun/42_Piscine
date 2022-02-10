@@ -44,7 +44,7 @@ void	putnbr_base_recursive(unsigned int nbr, int base, char *digits)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long long		num;
+	long long	num;
 
 	if(is_invalid(base))
 		return ;
