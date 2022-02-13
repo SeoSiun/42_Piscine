@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 15:46:41 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/12 17:31:39 by siseo            ###   ########.fr       */
+/*   Created: 2022/02/12 16:58:10 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/12 16:58:28 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <unistd.h>
+
+int	main(int argc, char *argv[])
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	i = argc - 1;
+	while (i > 0)
+	{
+		j = 0;
+		while (argv[i][j] != '\0')
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i--;
+	}
+	return (0);
 }

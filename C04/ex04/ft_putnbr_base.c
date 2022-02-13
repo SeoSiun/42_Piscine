@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 14:54:50 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/10 16:32:28 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/13 14:44:31 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,22 @@ void	putnbr_base_recursive(unsigned int nbr, int base_len, char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long long	num;
-	int			base_len;
+	int	base_len;
 
 	if (is_invalid(base, &base_len))
 		return ;
 	if (nbr == 0)
 		write(1, &base[0], 1);
+	if (nbr == -2147483648)
+	{
+		write(1, "-", 1);
+		putnbr_base_recursive(2147483648, base_len, base);
+		return ;
+	}
 	if (nbr < 0)
 	{
-		num = -nbr;
 		write(1, "-", 1);
+		nbr = -nbr;
 	}
 	putnbr_base_recursive(nbr, base_len, base);
 }
