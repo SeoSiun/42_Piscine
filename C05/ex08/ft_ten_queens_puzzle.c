@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/14 10:03:47 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/14 10:03:48 by siseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	print_queens_pos(int *queens)
@@ -23,7 +35,7 @@ int	check_queens(int *queens, int col)
 	while (i < col)
 	{
 		if ((col - i == queens[col] - queens[i])
-				 || (col - i == queens[i] - queens[col]))
+			|| (col - i == queens[i] - queens[col]))
 			return (0);
 		if (queens[i] == queens[col])
 			return (0);
@@ -32,10 +44,10 @@ int	check_queens(int *queens, int col)
 	return (1);
 }
 
-void	ft_ten_queens_recursive(int *queens, int col, int* sol_cnt)
+void	ft_ten_queens_recursive(int *queens, int col, int *sol_cnt)
 {
 	int	row;
-	
+
 	if (col == 10)
 	{
 		print_queens_pos(queens);
