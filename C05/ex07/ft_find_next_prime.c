@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 10:01:41 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/14 12:07:47 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/14 13:25:02 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	_ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
+	if (nb < 2)
+		return (2);
 	while (!_ft_is_prime(nb))
 		nb++;
 	return (nb);

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
+/*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:42:57 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/15 13:14:20 by siseo            ###   ########.fr       */
+/*   Created: 2022/02/15 13:46:23 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/15 13:51:27 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef	FT_H_
+#define	FT_H_
 
-int	main(int argc, char *argv[])
-{
-	int	i;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	i = 0;
-	while (argv[0][i] != '\0')
-	{
-		write(1, &argv[0][i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-	return (0);
-}
+#endif
