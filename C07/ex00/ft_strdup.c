@@ -1,8 +1,10 @@
 char	*ft_strdup(char *src)
 {
-	int	i;
-	char *dest;
-
+	int		i;
+	char	*dest;
+	int		len;
+	
+	i = 0;
 	len = 0;
 	while (src[i] != '\0')
 		i++;

@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:36:18 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/15 13:36:21 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/15 16:45:38 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	putnbr_base(unsigned int nbr, int base_len, char *base, char *result)
 
 char	*convert_base(int nbr, char *base)
 {
-	int	size;
-	int	base_len;
+	int		size;
+	int		base_len;
 	char	*result;
 
 	base_len = 0;
@@ -46,6 +46,8 @@ char	*convert_base(int nbr, char *base)
 		base_len++;
 	size = get_len(nbr, base_len);
 	result = malloc(sizeof(char) * (size + 1));
+	if (!result)
+		return (NULL);
 	if (nbr == 0)
 		result[0] = base[0];
 	else
