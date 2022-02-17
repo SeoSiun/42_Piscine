@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:24:27 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/12 15:25:32 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/13 17:11:23 by taekwlee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,9 +126,9 @@ int	right_valid(int board[4][4], int *right)
 	return (1);
 }
 
-int	valid_check(int board[4][4], int view[16])
+int	board_view_checker(int board[4][4], int view[16])
 {
-	if (!up_valid(board, view))
+	if (!up_valid(board, &view[0]))
 		return (0);
 	if (!down_valid(board, &view[4]))
 		return (0);

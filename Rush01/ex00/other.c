@@ -6,43 +6,34 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:23:59 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/12 15:24:03 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/13 13:05:23 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	is_space(int c)
-{
-	if ((c >= 9 && c <= 13) || c == 32)
-		return (1);
-	return (0);
-}
 
 int	is_valid_arg(char *str, int view[16])
 {
 	int	i;
 	int	cnt;
-	int	flag;
 
 	i = 0;
 	cnt = 0;
-	flag = 0;
 	while (str[i] != '\0')
 	{
-		while (is_space(str[i]) && str[i++] != '\0')
-			flag = 0;
-		if ((str[i] >= '1' && str[i] <= '4'))
+		if (i % 2 == 0)
 		{
-			if (cnt == 16 || flag == 1)
+			if (str[i] < '1' || str[i] > '4')
 				return (0);
-			view[cnt++] = str[i] - '0';
-			i++;
-			flag = 1;
+			if (cnt == 16)
+				return (0);
+			view[cnt] = str[i] - '0';
+			cnt++;
 		}
-		else if (str[i] == '\0' && cnt == 16)
-			return (1);
-		else
+		else if (str[i] != ' ')
 			return (0);
+		i++;
 	}
+	if (cnt != 16 || i != 31)
+		return (0);
 	return (1);
 }
 

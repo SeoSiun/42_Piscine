@@ -6,13 +6,13 @@
 /*   By: siseo <siseo@student.42seoul.kra>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 15:24:09 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/12 15:24:11 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/13 17:59:41 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	valid_check(int board[4][4], int view[16]);
+int	board_view_checker(int board[4][4], int view[16]);
 int	is_exist_same_line(int board[4][4], int row, int col);
 
 void	print_board(int board[4][4])
@@ -38,26 +38,28 @@ void	print_board(int board[4][4])
 	}
 }
 
-int	set_board(int board[4][4], int row, int col, int view[16])
+int	set_board(int board[4][4], int view[16], int row, int col)
 {
-	int	i;
+	int	height;
 
-	if (row == 4 && valid_check(board, view))
-		return (1);
-	else if (row == 4)
+	if (row == 4)
+	{
+		if (board_view_checker(board, view))
+			return (1);
 		return (0);
+	}
 	else if (col == 4)
-		return (set_board(board, row + 1, 0, view));
+		return (set_board(board, view, row + 1, 0));
 	else
 	{
-		i = 1;
-		while (i < 5)
+		height = 1;
+		while (height < 5)
 		{
-			board[row][col] = i;
+			board[row][col] = height;
 			if (!is_exist_same_line(board, row, col))
-				if (set_board(board, row, col + 1, view))
+				if (set_board(board, view, row, col + 1))
 					return (1);
-			i++;
+			height++;
 		}
 	}
 	return (0);

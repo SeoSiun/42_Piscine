@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:36:18 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/15 16:45:38 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/16 20:05:23 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,40 +32,48 @@ void	putnbr_base(unsigned int nbr, int base_len, char *base, char *result)
 	if (nbr == 0)
 		return ;
 	putnbr_base(nbr / base_len, base_len, base, result - 1);
-	result[0] = base[nbr % base_len];
+	*result = base[nbr % base_len];
+}
+
+int	_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
+void	convert(int nbr, char *base, char *result, int size)
+{
+	if (nbr < 0)
+	{
+		result[0] = '-';
+		if (nbr == -2147483648)
+		{
+			putnbr_base(2147483648, _strlen(base), base, &result[size - 1]);
+			return ;
+		}
+		else
+			nbr = -nbr;
+	}
+	putnbr_base(nbr, _strlen(base), base, &result[size - 1]);
 }
 
 char	*convert_base(int nbr, char *base)
 {
 	int		size;
-	int		base_len;
 	char	*result;
 
-	base_len = 0;
-	while (base[base_len] != '\0')
-		base_len++;
-	size = get_len(nbr, base_len);
+	size = get_len(nbr, _strlen(base));
 	result = malloc(sizeof(char) * (size + 1));
 	if (!result)
-		return (NULL);
+		return (0);
 	if (nbr == 0)
 		result[0] = base[0];
 	else
-	{
-		if (nbr < 0)
-		{
-			result[0] = '-';
-			if (nbr == -2147483648)
-			{
-				putnbr_base(2147483648, base_len, base, &result[size - 1]);
-				result[size] = '\0';
-				return (result);
-			}
-			else
-				nbr = -nbr;
-		}
-		putnbr_base(nbr, base_len, base, &result[size - 1]);
-	}
+		convert(nbr, base, result, size);
 	result[size] = '\0';
 	return (result);
 }
