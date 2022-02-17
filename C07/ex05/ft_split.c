@@ -6,7 +6,7 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:23:22 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/16 19:49:53 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/17 09:48:51 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ int	get_word_num(char *str, char *charset)
 char	*get_next_word(char *str, int next_len)
 {
 	int		i;
-	char	*split;
+	char	*word;
 
 	i = 0;
-	split = malloc(sizeof(char) * (next_len + 1));
-	if (!split)
+	word = malloc(sizeof(char) * (next_len + 1));
+	if (!word)
 		return (0);
 	while (i < next_len)
 	{
-		split[i] = str[i];
+		word[i] = str[i];
 		i++;
 	}
-	split[i] = '\0';
-	return (split);
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char *str, char *charset)
