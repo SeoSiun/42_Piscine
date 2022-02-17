@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   logic.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jaekjung <jaekjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 10:42:30 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/17 10:43:09 by siseo            ###   ########.fr       */
+/*   Created: 2021/09/26 23:39:15 by jaekjung          #+#    #+#             */
+/*   Updated: 2021/09/30 04:05:31 by jaekjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#ifndef LOGIC_H
+# define LOGIC_H
 
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}	t_point;
+t_answer	_create_answer(int max_side, int y, int x);
+void		_guard_input(t_input *input);
+
 #endif

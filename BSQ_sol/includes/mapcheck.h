@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   mapcheck.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: jaekjung <jaekjung@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 10:42:30 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/17 10:43:09 by siseo            ###   ########.fr       */
+/*   Created: 2021/09/30 03:37:02 by jaekjung          #+#    #+#             */
+/*   Updated: 2021/09/30 03:37:47 by jaekjung         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#ifndef MAPCHECK_H
+# define MAPCHECK_H
 
-typedef struct s_point
-{
-	int	x;
-	int	y;
-}	t_point;
+int		ft_strlen(char *str);
+
 #endif

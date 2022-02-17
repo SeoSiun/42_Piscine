@@ -6,14 +6,14 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:10:45 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/15 15:38:24 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/17 14:08:56 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_BOOLEAN_H
 # define FT_BOOLEAN_H
 # include <unistd.h>
-# define EVEN(nbr) (nbr % 2 ? 0 : 1)
+# define EVEN(nbr) nbr % 2 == 0
 # define TRUE 1
 # define FALSE 0
 # define EVEN_MSG "I have an even number of arguments.\n"
