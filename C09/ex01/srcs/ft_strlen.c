@@ -6,16 +6,16 @@
 /*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 13:29:00 by siseo             #+#    #+#             */
-/*   Updated: 2022/02/06 13:29:04 by siseo            ###   ########.fr       */
+/*   Updated: 2022/02/20 10:04:41 by siseo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	cnt;
+		int	cnt;
 
-	cnt = 0;
-	while (str[cnt] != '\0')
-		cnt++;
-	return (cnt);
+			cnt = 0;
+				while (str[cnt] != '\0')
+							cnt++;
+					return (cnt);
 }
