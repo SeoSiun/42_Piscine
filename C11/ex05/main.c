@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: siseo <siseo@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/21 11:29:51 by siseo             #+#    #+#             */
+/*   Updated: 2022/02/21 11:29:52 by siseo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	add(int, int);
-void	sub(int, int);
-void	div(int, int);
-void	mul(int, int);
-void	mod(int, int);
+void	add(int a, int b);
+void	sub(int a, int b);
+void	div(int a, int b);
+void	mul(int a, int b);
+void	mod(int a, int b);
 
 void	print_int(int nb, int is_negative)
 {
@@ -68,23 +80,29 @@ void	do_op(char *a, char *b, void(*f)(int, int))
 	write(1, "\n", 1);
 }
 
-
 int	main(int ac, char *av[])
 {
+	void	(*operator[5])(int, int);
+
+	operator[0] = add;
+	operator[1] = sub;
+	operator[2] = div;
+	operator[3] = mul;
+	operator[4] = mod;
 	if (ac != 4)
 		return (0);
 	if (av[2][1] != '\0')
 		write(1, "0\n", 2);
 	else if (av[2][0] == '+')
-		do_op(av[1], av[3], &add);
-	else if(av[2][0] == '-')
-		do_op(av[1], av[3], &sub);
-	else if(av[2][0] == '/')
-		do_op(av[1], av[3], &div);
-	else if(av[2][0] == '*')
-		do_op(av[1], av[3], &mul);
-	else if(av[2][0] == '%')
-		do_op(av[1], av[3], &mod);
+		do_op(av[1], av[3], operator[0]);
+	else if (av[2][0] == '-')
+		do_op(av[1], av[3], operator[1]);
+	else if (av[2][0] == '/')
+		do_op(av[1], av[3], operator[2]);
+	else if (av[2][0] == '*')
+		do_op(av[1], av[3], operator[3]);
+	else if (av[2][0] == '%')
+		do_op(av[1], av[3], operator[4]);
 	else
 		write(1, "0\n", 2);
 	return (0);
